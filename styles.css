@@ -1,0 +1,22 @@
+* {
+    margin: o;
+    padding: 0;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: auto;
+    width: auto;
+    height: auto;
+}
+.grid div {
+    border: 2px solid red;
+    width: 50px;
+    height: 50px;
+}
+
+.hoverClass {
+    background-color: orange;
+}
