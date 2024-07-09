@@ -1,25 +1,37 @@
-let grid = document.querySelector('.grid');
-let body = document.querySelector('body');
+let grid = document.querySelector(".grid");
+let btn = document.querySelector("button");
 
-let btn = document.querySelector('.popUp');
 
-let numChoice
 
-btn.addEventListener("click", () => {
-    grid.innerHTML = ""
-    numChoice = prompt("Enter a number for each side of the grid")
-    if (numChoice <= 100) {
-        for (let i = 1; i <= (numChoice * numChoice); i++) {
-            let div = document.createElement('div');
-            div.classList.add("square")
-            grid.appendChild(div)
+function createGrid(size) {
 
-            div.addEventListener("mouseover", (e) => { e.target.classList.add("hoverClass") })
+    if (!(isNaN(size)) && size <= 100) {
+        for (let i = 0; i < size; i++) {
+            let column = document.createElement('div');
+            column.classList.add("column");
+            grid.appendChild(column);
+            for (let j = 0; j < size; j++) {
+                let row = document.createElement('div');
+                row.classList.add("row");
+                let cell = document.createElement('div');
+                cell.classList.add("cell");
+                column.appendChild(row);
+                row.appendChild(cell);
+
+                cell.addEventListener("mouseover", (e) => {
+                    e.target.style.backgroundColor = `rgb(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256})`
+                })
+            }
+
         }
     } else {
-        window.alert("choose between 1 to 100 only!")
+        alert("Value needs to be a number!")
     }
+};
+
+btn.addEventListener ("click", () => {
+    grid.textContent = ""
+    let sizeChoice = prompt("Please enter a size");
+    createGrid(sizeChoice)
 })
-
-
 

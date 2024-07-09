@@ -1,22 +1,48 @@
 * {
-    margin: o;
     padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    background-color: yellowgreen;
+    height: 100vh;
+}
+
+button {
+    margin-top: 15px;
+    border-radius: 7px;
+    padding: 5px 12px;
+    font-weight: 700;
+    color: yellowgreen;
+    background-color: royalblue;
+    border: 0px;
 }
 
 .grid {
+    background-color: white;
+    width: 80vw;
+    height: 80vw;
+    border: 2px red solid;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex: auto;
-    width: auto;
-    height: auto;
-}
-.grid div {
-    border: 2px solid red;
-    width: 50px;
-    height: 50px;
+;
 }
 
-.hoverClass {
-    background-color: orange;
+.row {
+    display: flex;
+    flex: 1;
+}
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cell {
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
 }
